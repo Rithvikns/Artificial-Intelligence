@@ -76,7 +76,6 @@ print(tokenizer.decode(outputs[0]))
 ```
 Note: Running large models locally may require significant RAM or a GPU.
 
-## ⚖️ Hosted vs Local LLMs
 
 # ⚖️ Hosted LLM vs Local LLM
 
