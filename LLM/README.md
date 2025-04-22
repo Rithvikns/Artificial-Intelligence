@@ -50,7 +50,8 @@ Google (Gemini)
 
 Mistral via Hugging Face
 
-2. Running a Local LLM
+### 2. Running a Local LLM
+
 You can also run models like LLaMA or Mistral on your own machine using libraries such as:
 
 llama.cpp
@@ -61,9 +62,7 @@ transformers (Hugging Face)
 
 Python Example using Transformers:
 
-python
-Copy
-Edit
+```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
@@ -74,31 +73,22 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 inputs = tokenizer("Hello, how are you?", return_tensors="pt")
 outputs = model.generate(**inputs)
 print(tokenizer.decode(outputs[0]))
+```
 Note: Running large models locally may require significant RAM or a GPU.
 
-⚖️ Hosted vs Local LLMs
+## ⚖️ Hosted vs Local LLMs
 
-Feature	Hosted LLM (API)	Local LLM
-Ease of Use	Very simple (just use the API)	Requires setup and hardware
-Cost	Pay-per-request or subscription	Free after setup (hardware-dependent)
-Performance	Fast (cloud-scale)	Depends on your device
-Privacy	Data sent to external server	Data stays on your machine
-Customization	Limited to prompts	Full control & fine-tuning possible
-Internet Needed	✅ Yes	❌ No (runs offline)
-📦 Goals of This Repo
-✅ Explain LLM basics
+# ⚖️ Hosted LLM vs Local LLM
 
-✅ Provide usage examples (hosted & local)
+| Feature             | Hosted LLM (e.g., OpenAI, Anthropic) | Local LLM (e.g., LLaMA, Mistral)       |
+|---------------------|--------------------------------------|----------------------------------------|
+| **Setup**           | Simple, requires only API access     | Needs local setup and model download   |
+| **Ease of Use**     | Very user-friendly                   | Requires technical knowledge           |
+| **Performance**     | High performance, cloud-scaled       | Depends on local CPU/GPU               |
+| **Cost**            | Pay-per-use or subscription          | Free to run after setup                |
+| **Data Privacy**    | Data leaves your environment         | 100% local and private                 |
+| **Customization**   | Limited (no fine-tuning)             | Full control, supports fine-tuning     |
+| **Latency**         | Network-dependent                    | Low (on-device, no network delay)      |
+| **Internet Access** | Required                             | Not required (offline-capable)         |
+| **Scalability**     | Easy to scale via cloud              | Limited by local hardware              |
 
-🚧 [Optional] Add notebooks, CLI tools, or API wrappers
-
-🚧 [Optional] Include Docker/Deployment setups
-
-🧠 Further Reading
-OpenAI Platform
-
-Hugging Face Transformers
-
-llama.cpp GitHub
-
-Mistral AI
