@@ -34,8 +34,21 @@ COPY script.py /app/script.py
 WORKDIR /app
 
 CMD ["python", "script.py"]
+
 ```
 
+
+```console
+import openai
+
+openai.api_key = "your_api_key"
+
+response = openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Hello from OpenAI"}]
+)
+print(response['choices'][0]['message']['content'])
+```
 # Basic setup
 RUN apt update && apt install -y git cmake build-essential python3 python3-pip
 
