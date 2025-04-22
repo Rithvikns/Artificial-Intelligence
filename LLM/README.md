@@ -1,7 +1,7 @@
-🔍 What is an LLM?
+# 🔍 What is an LLM?
 A Large Language Model (LLM) is a type of AI model trained on massive amounts of text data to understand and generate human-like language. Examples include OpenAI's GPT, Meta's LLaMA, Google's PaLM, and Mistral. LLMs power applications like chatbots, code generation tools, search engines, and more.
 
-🐳 Example: Dockerfile for LLMs
+## 🐳 Example: Dockerfile for LLMs
 1. Running a Local Model (e.g., LLaMA with llama.cpp)
 Dockerfile
 Copy
