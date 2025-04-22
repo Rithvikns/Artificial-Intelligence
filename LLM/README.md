@@ -36,7 +36,7 @@ WORKDIR /app
 CMD ["python", "script.py"]
 
 ```
-
+script.py Example:
 
 ```console
 import openai
