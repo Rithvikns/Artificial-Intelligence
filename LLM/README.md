@@ -22,6 +22,20 @@ CMD ["./main", "-m", "./models/7B/ggml-model.bin", "-p", "Hello from LLM"]
 
 ```
 
+
+```console
+FROM python:3.10
+
+# Install dependencies
+RUN pip install openai
+
+# Copy your script
+COPY script.py /app/script.py
+WORKDIR /app
+
+CMD ["python", "script.py"]
+```
+
 # Basic setup
 RUN apt update && apt install -y git cmake build-essential python3 python3-pip
 
