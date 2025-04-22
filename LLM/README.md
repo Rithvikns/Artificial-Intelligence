@@ -99,3 +99,4 @@ Cost	Pay-per-use or subscription	One-time cost (hardware + downloads)
 Privacy	Data leaves your system	Fully private, stays on your machine
 Customization	Limited (prompt engineering)	Full control, can fine-tune
 Internet Access	Required	Can work offline
+
