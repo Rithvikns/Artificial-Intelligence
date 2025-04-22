@@ -3,10 +3,24 @@ A Large Language Model (LLM) is a type of AI model trained on massive amounts of
 
 ## 🐳 Example: Dockerfile for LLMs
 1. Running a Local Model (e.g., LLaMA with llama.cpp)
-Dockerfile
-Copy
-Edit
+```console
 FROM ubuntu:22.04
+
+# Basic setup
+RUN apt update && apt install -y git cmake build-essential python3 python3-pip
+
+# Clone llama.cpp and build
+RUN git clone https://github.com/ggerganov/llama.cpp && \
+    cd llama.cpp && mkdir build && cd build && cmake .. && make
+
+# Copy your model weights (assume they're in the same directory)
+COPY ./models /llama.cpp/models
+
+# Run script
+WORKDIR /llama.cpp
+CMD ["./main", "-m", "./models/7B/ggml-model.bin", "-p", "Hello from LLM"]
+
+```
 
 # Basic setup
 RUN apt update && apt install -y git cmake build-essential python3 python3-pip
